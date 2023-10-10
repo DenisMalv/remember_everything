@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { fetchMovie } from "API/fetches";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Movies = () => {
     const location = useLocation();
@@ -16,7 +16,7 @@ const Movies = () => {
 
     useEffect(()=>{
         location?.state?.query && fetchMovie(location.state.query).then((data)=>setMovies(data.results))
-    },[])
+    },[location.state.query])
     
     return (
         <div>

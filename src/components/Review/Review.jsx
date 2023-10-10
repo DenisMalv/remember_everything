@@ -11,7 +11,7 @@ const Review = () => {
 
     useEffect(()=>{
         fetchMovieDetails(params.movieId,'reviews').then((data)=>setMovieReviews(data.results))
-    },[])
+    },[params.movieId])
     
     return (
         <div>

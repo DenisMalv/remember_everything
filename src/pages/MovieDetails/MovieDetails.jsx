@@ -1,7 +1,7 @@
 
 import { Suspense, useEffect, useState } from "react";
 import { fetchMovieDetails } from "API/fetches";
-import { Link, NavLink, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 
 const MovieDetails = () => {
     const params = useParams()
@@ -14,7 +14,7 @@ const MovieDetails = () => {
 
         fetchMovieDetails(params.movieId).then((data)=>setMovie(data))
 
-    },[])
+    },[params.movieId])
     
     return (
         movie && <div>

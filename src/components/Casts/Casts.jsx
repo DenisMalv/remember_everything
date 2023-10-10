@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { fetchMovieDetails } from "API/fetches";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const Casts = () => {
     const params = useParams()
@@ -9,7 +9,7 @@ const Casts = () => {
 
     useEffect(()=>{
         fetchMovieDetails(params.movieId,'credits').then((data)=>setMovieCasts(data.cast))
-    },[])
+    },[params.movieId])
     
     return (
         <div>

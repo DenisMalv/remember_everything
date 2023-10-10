@@ -1,5 +1,5 @@
 import { Outlet,NavLink } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 
 
 const Layout = () =>{
